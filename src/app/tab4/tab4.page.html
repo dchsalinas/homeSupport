@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="top">Bookmarks</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Bookmark</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-toolbar>
+  <ion-buttons (click)="presentAlert()" slot="start">
+    <ion-menu-button autoHide="false"></ion-menu-button>
+  </ion-buttons>
+  <!-- Item with badge on right -->
+  <!-- Will later add Javascript to make it function once the other section has been implemented-->
+  <ion-item>
+    <ion-label>Bookmark(s)</ion-label>
+  </ion-item>
+
+  <ion-buttons slot="secondary">
+    <ion-button>
+      <ion-badge color="danger" slot="end">0</ion-badge>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+</ion-content>

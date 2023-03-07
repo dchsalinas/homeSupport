@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <div class="top">Reviews</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Reviews</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- 
+  <ion-card>
+    <div class="list">
+      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+        <ion-img [src]="photo.webviewPath"></ion-img>
+      </ion-col>
+    <ion-card-header>
+      <ion-card-subtitle>Review</ion-card-subtitle>
+      <ion-card-title>McDonald's</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      REVIEW GOES HERE -- This is where the content will go once the review is set. Yeah this is what it says.
+      Just going to copy and paste now.
+    </ion-card-content>
+    
+    <ion-item>
+      <ion-button (click)="presentReview()" slot="start" color="danger">Review</ion-button>
+      <ion-button (click)="presentBookmark()" color="danger">Bookmark</ion-button>
+    </ion-item>
+  </div>
+  </ion-card>
+ -->
+
+  <ion-card class="align-items-center" *ngFor="let record of records; let i = index">
+    <div class="list">
+    <ion-card-header>
+      <ion-card-subtitle>{{record.rest}}, {{record.location}} </ion-card-subtitle>
+      <ion-card-title>{{record.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{record.review}}
+    </ion-card-content>
+    <ion-item>
+      <ion-icon class="pin" name="star" slot="start"></ion-icon>
+      <ion-label>
+        Rating: {{record.stars}}
+      </ion-label>
+    </ion-item>
+    <ion-row  size="3">                    
+      <ion-note *ngIf="record.type == '$'" color="success">$ {{record.amount}}</ion-note>
+      <ion-note *ngIf="record.type == '$$'" color="danger">$ {{record.amount}}</ion-note>
+      <ion-note *ngIf="record.type == '$$$'" color="danger">$ {{record.amount}}</ion-note>
+    </ion-row>
+    <ion-item>
+      <ion-button (click)="presentBookmark()" color="danger">Bookmark</ion-button>
+      <ion-button slot="end" color="danger" (click)="DeleteRecord(record.id)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+     </ion-item>
+  </div>
+  </ion-card>
+</ion-content>

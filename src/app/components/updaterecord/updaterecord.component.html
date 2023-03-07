@@ -1,0 +1,52 @@
+<ion-row class="ion-text-center align-items-center">
+  <ion-col size="12">
+    <ion-text><h4>UPDATE RECORD</h4></ion-text>
+  </ion-col>
+  <ion-col size="4">
+    <ion-select [(ngModel)]="type" placeholder="Select">
+      <ion-select-option value="$">$</ion-select-option>
+      <ion-select-option value="$$">$$</ion-select-option>
+      <ion-select-option value="$$$">$$$</ion-select-option>
+    </ion-select>
+  </ion-col>
+
+  <ion-col size="10" offset="1">
+    <ion-item>
+      <ion-input [(ngModel)]="title" placeholder="Title"></ion-input>
+    </ion-item>
+  </ion-col>
+
+  <ion-col size="10" offset="1">
+    <ion-item>
+      <ion-input [(ngModel)]="rest" placeholder="Name of Restaurant"></ion-input>
+    </ion-item>
+  </ion-col>
+
+  <ion-col size="10" offset="1">
+    <ion-item>
+      <ion-input [(ngModel)]="location" placeholder="Location"></ion-input>
+    </ion-item>
+  </ion-col>
+
+  <ion-col size="10" offset="1">
+    <ion-item>
+      <ion-input [(ngModel)]="review" placeholder="Review"></ion-input>
+    </ion-item>
+  </ion-col>
+
+  <ion-col size="10" offset="1">
+    <ion-item>
+      <ion-input [(ngModel)]="stars" placeholder="Stars"></ion-input>
+    </ion-item>
+  </ion-col>
+
+  <ion-col size="10" offset="1">
+    <ion-button expand="block" color="success" (click)="UpdateRecord(price, title, rest, location, review, stars)">Update</ion-button>
+  </ion-col>
+
+  <ion-col size="10" offset="1">
+    <ion-button expand="block" color="danger" (click)="CloseModal()">Cancel</ion-button>
+  </ion-col>
+
+</ion-row>  
+<ion-row>    
