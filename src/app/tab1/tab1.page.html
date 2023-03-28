@@ -14,74 +14,98 @@
   </ion-header>
 
   <div [hidden]="hideMessage">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Welcome</ion-card-subtitle>
-      <ion-card-title>Welcome to Fork</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content> 
-      Fork is a review application where you can keep track of reviews you have 
-      left at various restaurants, diners, and food establishments. 
-      <br>
-      <ion-col size="10" offset="1">
-        <ion-button (click)="hideMyMessage()" expand="block" color="danger">Dismiss</ion-button>
-      </ion-col>
-    </ion-card-content>
-  </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Welcome</ion-card-subtitle>
+        <ion-card-title>Welcome to Home Support</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Home Support is an insurance item tracking app. This application is here
+        to support all your insurance needs! Simply add your item below for safe
+        tracking!
+        <br />
+        <ion-col size="10" offset="1">
+          <ion-button (click)="hideMyMessage()" expand="block" color="danger"
+            >Dismiss</ion-button
+          >
+        </ion-col>
+      </ion-card-content>
+    </ion-card>
   </div>
 
   <ion-card>
-  <ion-row class="ion-text-center align-items-center">
-    <ion-col size="12">
-      <ion-text color="primary"><h4>Create a Review</h4></ion-text>
-    </ion-col> 
-  </ion-row>
-  <ion-row>
+    <ion-row class="ion-text-center align-items-center">
+      <ion-col size="12">
+        <ion-text color="primary"><h4>Add New Item</h4></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-input
+            [(ngModel)]="addrecord.location"
+            placeholder="Location"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
 
-    <ion-col size="12" >
-      <ion-item>
-        <ion-input [(ngModel)]="addrecord.location" placeholder="Location"></ion-input>
-      </ion-item>
-    </ion-col>
+      <ion-col size="12">
+        <ion-select
+          [(ngModel)]="addrecord.price"
+          placeholder="Select Price Range"
+        >
+          <ion-select-option value="$">$</ion-select-option>
+          <ion-select-option value="$$">$$</ion-select-option>
+          <ion-select-option value="$$$">$$$</ion-select-option>
+        </ion-select>
+      </ion-col>
 
-    <ion-col size="12" >
-      <ion-select [(ngModel)]="addrecord.price" placeholder="Select Price Range">
-        <ion-select-option value="$">$</ion-select-option>
-        <ion-select-option value="$$">$$</ion-select-option>
-        <ion-select-option value="$$$">$$$</ion-select-option>
-      </ion-select>
-    </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-input
+            [(ngModel)]="addrecord.rest"
+            placeholder="Item Name"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
 
-    <ion-col size="12" >
-      <ion-item>
-        <ion-input [(ngModel)]="addrecord.rest" placeholder="Name of Restaurant"></ion-input>
-      </ion-item>
-    </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-input
+            [(ngModel)]="addrecord.review"
+            placeholder="Description of Item"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
 
+      <!-- <ion-col size="12">
+        <ion-item>
+          <ion-input
+            [(ngModel)]="addrecord.stars"
+            placeholder="Stars from 1 Through 10"
+          ></ion-input>
+        </ion-item>
+      </ion-col> -->
 
-    <ion-col size="12" >
-      <ion-item>
-        <ion-input [(ngModel)]="addrecord.review" placeholder="Review"></ion-input>
-      </ion-item>
-    </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-input
+            [(ngModel)]="addrecord.title"
+            placeholder="Title"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
 
-
-    <ion-col size="12" >
-      <ion-item>
-        <ion-input [(ngModel)]="addrecord.stars" placeholder="Stars from 1 Through 10"></ion-input>
-      </ion-item>
-    </ion-col>
-
-    <ion-col size="12" >
-      <ion-item>
-        <ion-input [(ngModel)]="addrecord.title" placeholder="Title"></ion-input>
-      </ion-item>
-    </ion-col>
-    
-    <ion-col size="10" offset="1">
-    <ion-button expand="block" color="danger" (click)="presentAlert()" (click)="AddRecord(addrecord.price, addrecord.title, addrecord.rest, addrecord.location, addrecord.review, addrecord.stars)">Add Review</ion-button>
-  </ion-col>
-  </ion-row>  
-</ion-card>
+      <ion-col size="10" offset="1">
+        <ion-button
+          expand="block"
+          color="danger"
+          (click)="presentAlert()"
+          (click)="AddRecord(addrecord.price, addrecord.title, addrecord.rest, addrecord.location, addrecord.review, addrecord.stars)"
+          >Add New Item</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>
