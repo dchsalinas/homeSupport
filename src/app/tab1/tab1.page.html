@@ -26,7 +26,7 @@
         tracking!
         <br />
         <ion-col size="10" offset="1">
-          <ion-button (click)="hideMyMessage()" expand="block" color="danger"
+          <ion-button (click)="hideMyMessage()" expand="block" color="success"
             >Dismiss</ion-button
           >
         </ion-col>
@@ -37,27 +37,53 @@
   <ion-card>
     <ion-row class="ion-text-center align-items-center">
       <ion-col size="12">
-        <ion-text color="primary"><h4>Add New Item</h4></ion-text>
+        <ion-text color="primary"><h4>Add Item</h4></ion-text>
       </ion-col>
     </ion-row>
+
     <ion-row>
+        <!-- 
       <ion-col size="12">
         <ion-item>
           <ion-input
             [(ngModel)]="addrecord.location"
-            placeholder="Location"
+            placeholder="Location of Item"
           ></ion-input>
         </ion-item>
+      </ion-col>
+    -->
+
+      <ion-col size="12">
+        <ion-select
+          [(ngModel)]="addrecord.location"
+          placeholder="Location of Item"
+        >
+          <ion-select-option value="livingRoom">Living Room</ion-select-option>
+          <ion-select-option value="bedRoom">Bedrooms</ion-select-option>
+          <ion-select-option value="bathRoom">Bathrooms</ion-select-option>
+          <ion-select-option value="garage">Garage</ion-select-option>
+          <ion-select-option value="foyer">Foyer</ion-select-option>
+          <ion-select-option value="kitchen">Kitchen</ion-select-option>
+          <ion-select-option value="laundry">Laundry</ion-select-option>
+          <ion-select-option value="closet">Closets</ion-select-option>
+          <ion-select-option value="office">Office</ion-select-option>
+          <ion-select-option value="library">Library</ion-select-option>
+          <ion-select-option value="other">Other</ion-select-option>
+        </ion-select>
       </ion-col>
 
       <ion-col size="12">
         <ion-select
           [(ngModel)]="addrecord.price"
-          placeholder="Select Price Range"
+          placeholder="Price Range of Item"
         >
-          <ion-select-option value="$">$</ion-select-option>
-          <ion-select-option value="$$">$$</ion-select-option>
-          <ion-select-option value="$$$">$$$</ion-select-option>
+          <ion-select-option value="$">$1 - $50</ion-select-option>
+          <ion-select-option value="$$">$50 - $100</ion-select-option>
+          <ion-select-option value="$$$">$100 - $250</ion-select-option>
+          <ion-select-option value="$$$">$250 - $500</ion-select-option>
+          <ion-select-option value="$$$$">$500 - $750</ion-select-option>
+          <ion-select-option value="$$$$$">$750 - $1000</ion-select-option>
+          <ion-select-option value="$$$$$$">$100+</ion-select-option>
         </ion-select>
       </ion-col>
 
@@ -100,7 +126,7 @@
       <ion-col size="10" offset="1">
         <ion-button
           expand="block"
-          color="danger"
+          color="success"
           (click)="presentAlert()"
           (click)="AddRecord(addrecord.price, addrecord.title, addrecord.rest, addrecord.location, addrecord.review, addrecord.stars)"
           >Add New Item</ion-button
