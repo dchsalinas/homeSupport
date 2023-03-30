@@ -1,7 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
+<<<<<<< HEAD
       <div class="top">My Items</div>
+=======
+      <div class="top">Items</div>
+>>>>>>> 58c2ef1020ad290f8f9104ca54d893d778cbc9fc
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +13,11 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
+<<<<<<< HEAD
       <ion-title size="large"> My Items</ion-title>
+=======
+      <ion-title size="large">Items</ion-title>
+>>>>>>> 58c2ef1020ad290f8f9104ca54d893d778cbc9fc
     </ion-toolbar>
   </ion-header>
 
@@ -45,6 +53,7 @@
     <ion-card-content>
       {{record.review}}
     </ion-card-content>
+<<<<<<< HEAD
    
     <ion-row  size="3">    
       <ion-note *ngIf="record.type == 'livingRoom'" >{{record.location}}</ion-note>
@@ -58,6 +67,19 @@
       <ion-note *ngIf="record.type == 'office'">{{record.location}}</ion-note>
       <ion-note *ngIf="record.type == 'library'">{{record.location}}</ion-note>
       <ion-note *ngIf="record.type == 'other'">{{record.location}}</ion-note>
+=======
+    <ion-item>
+      <!-- <ion-icon class="pin" name="star" slot="start"></ion-icon> -->
+      <ion-icon class="pin" name="cash-outline" slot="start"></ion-icon>
+      <ion-label>
+        Valuation: ${{record.stars}}
+      </ion-label>
+    </ion-item>
+    <ion-row  size="3">                    
+      <ion-note *ngIf="record.type == '$'" color="success">$ {{record.amount}}</ion-note>
+      <ion-note *ngIf="record.type == '$$'" color="danger">$ {{record.amount}}</ion-note>
+      <ion-note *ngIf="record.type == '$$$'" color="danger">$ {{record.amount}}</ion-note>
+>>>>>>> 58c2ef1020ad290f8f9104ca54d893d778cbc9fc
     </ion-row>
 
     <ion-item>
